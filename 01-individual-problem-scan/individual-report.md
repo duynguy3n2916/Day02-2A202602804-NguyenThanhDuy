@@ -6,12 +6,10 @@
 
 - **Họ và tên:** Nguyễn Thành Duy
 - **Mã học viên:** 2A202602804
-- **Vai trò / bối cảnh:** Chuyên viên Vận hành Dịch vụ Khách hàng (Customer Experience & Operations Executive) tại Taxi điện Xanh SM (GSM - Hệ sinh thái Vingroup).
+- **Vai trò / bối cảnh:** Sinh viên năm cuối Học viện Công nghệ Bưu chính Viễn thông
 - **Công việc hằng tuần:**
-  1. Trực tiếp nhận và xử lý 150-200 ticket khiếu nại/ngày từ app Xanh SM và tổng đài CSKH (quên đồ, tranh chấp cước phí, phản ánh thái độ tài xế).
-  2. Tra cứu dữ liệu log cuốc xe (GPS, thời gian đón/trả, thông tin tài xế/khách hàng) trên hệ thống điều phối nội bộ để xác minh sự vụ.
-  3. Phối hợp với đội Vận hành trạm sạc V-GREEN / VinFast để tiếp nhận và phản hồi các sự cố trụ sạc từ phía tài xế.
-  4. Lọc và tổng hợp báo cáo tuần về các nguyên nhân hủy cuốc và nhóm khiếu nại nổi cộm gửi Trưởng bộ phận Vận hành.
+  1. Học tập và làm đồ án
+  2. Làm các task ở công ty đang thực tập
 
 ---
 
