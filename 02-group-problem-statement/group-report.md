@@ -109,14 +109,16 @@ Sau khi bạn Vũ Anh mở ngay điện thoại cho nhóm xem 3 kênh Discord l�
 
 | Nguồn | Số người / mẫu | Tín hiệu xác nhận (kèm quote nguyên văn) | Tín hiệu phản bác | Nhóm sửa problem thế nào |
 |---|---:|---|---|---|
-| Interview | | | | |
-| Survey / poll | | | | |
-| Log / ticket / review (nếu có) | | | | |
+| Interview | 3 sinh viên | 2/3 sinh viên cho biết phải kiểm tra Discord nhiều lần trong ngày để tránh bỏ sót thông báo học tập. Quote: *"Nhiều lúc task nhóm không ghi rõ là deadline, chỉ nhắn kiểu cố làm xong trước buổi demo nên mình phải đọc kỹ mới biết là việc gấp."* | 1/3 sinh viên cho rằng nếu môn học có channel announcement rõ ràng và bật notification phù hợp thì việc theo dõi thông báo không quá khó. | Nhóm nhận thấy pain không đơn giản là có quá nhiều notification mà nằm ở bước phải đọc và hiểu nội dung để xác định thông tin nào thực sự cần hành động. |
+| Survey / poll | 8 sinh viên | 6/8 sinh viên cho biết kiểm tra Discord từ 5 lần/ngày trở lên; 5/8 từng bỏ sót hoặc đọc muộn ít nhất một thông báo liên quan đến assignment, deadline, lịch học hoặc task nhóm. Quote: *"Có hôm thông báo deadline nằm giữa nhiều tin nhắn nên mình đọc muộn."* | 2/8 sinh viên cho rằng notification, mute channel và @mention hiện tại đã đáp ứng phần lớn nhu cầu của họ. | Nhóm thu hẹp problem vào việc phát hiện các tin nhắn có task, deadline, thay đổi lịch hoặc yêu cầu hành động thay vì cố gắng xử lý tất cả tin nhắn Discord. |
+| Log / ticket / review (nếu có) | 1 workflow cá nhân | Workflow quan sát gồm: mở Discord → kiểm tra channel → đọc tin nhắn → lọc thông tin quan trọng → tìm task/deadline → ghi nhớ hoặc lưu lại. Bước đọc và lọc thông tin chiếm phần lớn thời gian kiểm tra, khoảng 8-10 lần/ngày và tổng khoảng 20-30 phút/ngày. | Một số thông báo rõ ràng như @mention hoặc announcement có thể được phát hiện bằng notification/rule mà không cần AI. | Nhóm chọn cách kết hợp: AI dùng để hiểu nội dung và ngữ cảnh, Rule dùng để tính mức độ ưu tiên, Agent dùng để tổng hợp/cảnh báo và sinh viên xác nhận trước các hành động quan trọng. |
 
 **Insight sau validation (1-2 câu — pain thật nằm ở đâu):**
 
 ```text
+Pain chính không chỉ nằm ở số lượng tin nhắn Discord mà nằm ở việc sinh viên phải tự đọc và hiểu nội dung để xác định tin nhắn nào có task, deadline, thay đổi lịch hoặc yêu cầu hành động liên quan trực tiếp đến mình.
 
+Notification và rule có thể xử lý các trường hợp đơn giản, còn AI có giá trị ở những tin nhắn cần hiểu nội dung và ngữ cảnh.
 ```
 
 Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`, `...-interview-notes.md`
@@ -125,17 +127,15 @@ Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`,
 
 | Nguồn / tool / case | Link | Họ giải quyết bước nào? | Điểm mạnh | Khoảng trống / rủi ro | Bài học cho nhóm |
 |---|---|---|---|---|---|
-| | | | | | |
-| | | | | | |
-| | | | | | |
+| Todoist Discord Integration | https://todoist.com/integrations/apps/discord | Tạo task từ Discord | Quản lý task tốt, có hạn chót | Bắt người dùng tự chọn tin nhắn và gõ lệnh thủ công | Cần tự động phát hiện task ẩn thay vì bắt gõ command |
+| Zapier Discord to Google Calendar | https://zapier.com/apps/discord/integrations/google-calendar | Đồng bộ sự kiện sang lịch | Rule ổn định, tự động hóa mượt | Chỉ là Rule tĩnh, không hiểu được ngữ cảnh tự nhiên | Rule tốt cho bước đẩy lịch, nhưng cần AI để trích xuất ngày giờ |
+| Motion AI (usemotion) | https://www.usemotion.com | Tự động lập lịch & ưu tiên | Tự sắp xếp task thông minh | Giá đắt, không tích hợp đọc tin nhắn server trường học | Pattern tốt: AI gợi ý ưu tiên, người thật duyệt trước khi chốt |
 
 **Research takeaway (2-3 câu — nên build gì / không build gì):**
 
 ```text
-
+Không nên build bot bắt sinh viên tự gõ lệnh thủ công vì sẽ không giải quyết được vấn đề lười đọc tin nhắn. Mô hình tối ưu là Workflow kết hợp: Rule/Webhook tự động lắng nghe -> AI đọc hiểu ngữ cảnh trích xuất task/deadline -> Rule tính điểm ưu tiên -> Sinh viên duyệt (Human boundary) để lưu vào Google Calendar.
 ```
-
-> Lưu ý: không dùng số liệu AI đưa nếu không verify được link chính thức. Ghi rõ giả định chưa chắc.
 
 ---
 
@@ -146,23 +146,31 @@ Bằng chứng đính kèm (nếu có): `02-group-problem-statement-survey.png`,
 Dán workflow hoặc link file: `02-group-problem-statement-workflow.png/pdf/md`
 
 ```text
-[1 ...: __' - ai làm] → [2 ...: __'] → [3 ...: __'] → [4 ... bottleneck: __'] → ...
+CURRENT WORKFLOW — khoảng 25 phút/ngày
+
+[1. Mở Discord: ~2' - Sinh viên] 
+→ [2. Kiểm tra các channel có tin nhắn mới: ~5' - Sinh viên] 
+→ [3. Đọc các tin nhắn chưa đọc: ~8' - Sinh viên] 
+→ [4. Hiểu nội dung + lọc thông tin quan trọng: ~7' - Sinh viên] <-- BOTTLENECK 
+→ [5. Xác định task / assignment / deadline / thay đổi lịch: ~2' - Sinh viên] 
+→ [6. Ghi nhớ hoặc lưu việc cần làm: ~1' - Sinh viên] 
+→ [7. Lặp lại khi có tin nhắn mới - khoảng 8-10 lần/ngày]
 ```
 
 | Bước | Actor | Input | Output | Thời gian / tần suất | Ghi chú (handoff? bottleneck?) |
 |---|---|---|---|---|---|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
-| 6 | | | | | |
-| 7 | | | | | |
+| 1 | Sinh viên | Nhu cầu kiểm tra thông báo học tập | Discord được mở để kiểm tra | Nhiều lần/ngày | Bắt đầu workflow |
+| 2 | Sinh viên | Các server/channel Discord | Xác định các channel có tin nhắn mới | ~5 phút/ngày | Phải tự kiểm tra nhiều channel |
+| 3 | Sinh viên | Các tin nhắn chưa đọc | Nội dung các tin nhắn đã được đọc | ~8 phút/ngày | Có cả thông tin quan trọng và tin nhắn thông thường |
+| 4 | Sinh viên | Nội dung tin nhắn, người gửi, channel, mention và thời gian | Xác định tin nhắn nào quan trọng hoặc liên quan đến bản thân | ~7 phút/ngày | **Bottleneck chính** — phải tự hiểu nội dung và đánh giá mức độ liên quan |
+| 5 | Sinh viên | Các tin nhắn đã xác định là quan trọng | Task, assignment, deadline hoặc thay đổi lịch cần chú ý | ~2 phút/ngày | Phải tự trích xuất thông tin cần hành động |
+| 6 | Sinh viên | Task/deadline đã xác định | Việc cần làm được ghi nhớ hoặc lưu vào Todo/Calendar | ~1 phút/ngày | Có nguy cơ quên hoặc lưu thiếu |
+| 7 | Sinh viên | Các tin nhắn mới xuất hiện trong ngày | Workflow được thực hiện lại | Khoảng 8-10 lần/ngày | Quá trình lặp lại gây gián đoạn việc học |
 
 **Bottleneck chính (2-3 câu):**
 
 ```text
-
+Bottleneck chính nằm ở bước sinh viên phải tự đọc, hiểu và lọc các tin nhắn để xác định thông tin nào thực sự quan trọng và liên quan đến mình. Việc đánh giá phải dựa trên nhiều yếu tố như người gửi, channel, nội dung, mention, deadline và mức độ khẩn cấp. Vì tin nhắn xuất hiện liên tục, sinh viên phải lặp lại quá trình này nhiều lần nhưng vẫn có nguy cơ bỏ sót assignment, deadline, task hoặc thay đổi quan trọng.
 ```
 
 ### 5.2. Future workflow bản nhóm
@@ -170,35 +178,71 @@ Dán workflow hoặc link file: `02-group-problem-statement-workflow.png/pdf/md`
 Phải nhìn ra 5 thứ: bước nào máy (Rule), bước nào AI, bước nào người, boundary ở đâu, fallback khi AI sai.
 
 ```text
-[1 ...: __' - máy] → [2 AI ...: __'] → [3 ... review: __' - boundary] → [4 ... gửi]
+FUTURE WORKFLOW — kỳ vọng dưới 10 phút/ngày
 
-Fallback: ...
+[1. Agent nhận tin nhắn mới từ các channel được cho phép - máy/Rule] 
+→ [2. Rule lọc sơ bộ theo channel, sender, mention và quyền truy cập - máy] 
+→ [3. AI hiểu nội dung + trích xuất task, deadline, action, urgency và relevance - AI] 
+→ [4. Rule tính Priority Score — High / Medium / Low - máy] 
+→ [5. Agent tổng hợp/cảnh báo các thông tin cần chú ý - máy] 
+→ [6. Sinh viên review: Confirm / Edit / Ignore - người] <-- HUMAN BOUNDARY 
+→ [7. Sau khi Confirm, hệ thống lưu task/deadline vào Todo/Calendar - máy]
+
+Fallback: Nếu AI không hiểu nội dung, confidence thấp, trích xuất sai hoặc gặp tin nhắn mơ hồ, hệ thống không tự tạo hoặc thay đổi task/deadline. Agent hiển thị tin nhắn gốc để sinh viên tự kiểm tra, chỉnh priority, sửa thông tin hoặc xử lý thủ công trên Discord.
+```
+
+**Cách xác định Priority:**
+
+```text
+AI trước tiên hiểu nội dung và trích xuất các tín hiệu:
+- Sender: giảng viên/TA, teammate hoặc người khác.
+- Action: có yêu cầu sinh viên thực hiện việc gì hay không.
+- Deadline: có thời hạn cụ thể hoặc ngầm định hay không.
+- Urgency: deadline còn bao lâu.
+- Mention: sinh viên có được nhắc trực tiếp hay không.
+- Relevance: nội dung có liên quan đến môn học/project của sinh viên hay không.
+
+Sau đó Rule tính Priority Score. Ví dụ:
+- Giảng viên/TA: +3
+- Teammate: +2
+- Có action: +3
+- Có deadline: +2
+- Deadline dưới 24 giờ: +3
+- Deadline trong 1-3 ngày: +2
+- Mention/giao task trực tiếp: +3
+- Liên quan môn học/project: +1
+
+Phân loại:
+- 0-3 điểm: Low
+- 4-7 điểm: Medium
+- 8+ điểm: High
 ```
 
 **Before/after impact:**
 
 | Metric | Trước | Sau kỳ vọng | Cách đo |
 |---|---:|---:|---|
-| Tổng thời gian | | | |
-| Số bước | | | |
-| Số bước thủ công | | | |
-| Bottleneck chính | | | |
-| Risk mới | | | |
+| Tổng thời gian | Khoảng 20-30 phút/ngày | Dưới 10 phút/ngày | Ghi lại tổng thời gian dành cho việc chủ động kiểm tra, đọc và lọc Discord mỗi ngày trong 1-2 tuần |
+| Số bước | 7 bước | 7 bước | So sánh workflow trước và sau; dù số bước tương đương, phần lớn bước sau được tự động hóa |
+| Số bước thủ công | 7/7 bước chủ yếu do sinh viên thực hiện | 1 bước chính: review/xác nhận | Đếm số bước cần sinh viên trực tiếp thực hiện |
+| Bottleneck chính | Tự đọc, hiểu và lọc từng tin nhắn để tìm thông tin quan trọng | Review các trường hợp AI phát hiện và xác nhận thông tin | So sánh thời gian sinh viên phải trực tiếp đọc/lọc trước và sau |
+| Risk mới | Bỏ sót thông báo do phải tự theo dõi nhiều channel | AI phân loại sai, trích xuất sai deadline/task hoặc tạo quá nhiều cảnh báo | Theo dõi số false positive, false negative và số lần người dùng phải Edit/Ignore |
 
 ### 5.3. Problem Statement v0 (mỗi field 2-3 câu)
 
 | Field | Nội dung |
 |---|---|
-| **Actor** | |
-| **Workflow** | |
-| **Bottleneck** | |
-| **Impact** | |
-| **Success Metric** | |
-| **Boundary** | |
+| **Actor** | Sinh viên sử dụng Discord để nhận thông báo học tập, trao đổi với giảng viên/TA và làm việc với nhóm project. Họ thường phải theo dõi nhiều channel và tin nhắn trong ngày để biết những việc liên quan đến mình. |
+| **Workflow** | Hiện tại sinh viên phải mở Discord nhiều lần, kiểm tra channel, đọc tin nhắn, tự xác định thông tin quan trọng rồi tìm và lưu lại assignment, task, deadline hoặc thay đổi lịch. Workflow này lặp lại nhiều lần trong ngày khi có tin nhắn mới. |
+| **Bottleneck** | Bottleneck nằm ở bước đọc, hiểu và lọc nội dung để xác định tin nhắn nào thực sự cần hành động. Việc này khó giải quyết hoàn toàn bằng keyword vì một task hoặc deadline có thể được diễn đạt gián tiếp, ví dụ: "phần model của m cố xong trước buổi demo sáng mai nhé". |
+| **Impact** | Sinh viên hiện dành khoảng 20-30 phút/ngày để kiểm tra Discord, khoảng 8-10 lần/ngày. Việc kiểm tra lặp lại gây gián đoạn quá trình học nhưng vẫn tồn tại nguy cơ bỏ sót assignment, deadline, task hoặc thay đổi quan trọng. |
+| **Success Metric** | Mục tiêu là giảm tổng thời gian chủ động kiểm tra và lọc Discord xuống dưới 10 phút/ngày và giảm số lần phải chủ động kiểm tra xuống khoảng 3-4 lần/ngày. Đồng thời cần theo dõi tỷ lệ bỏ sót thông báo quan trọng và số trường hợp hệ thống phân loại sai. |
+| **Boundary** | Giải pháp chỉ xử lý các channel/message mà hệ thống được phép truy cập và không thay thế toàn bộ notification system của Discord. AI được phép phân tích, trích xuất và đề xuất priority, nhưng sinh viên phải Confirm/Edit/Ignore trước khi hệ thống tạo hoặc thay đổi task/deadline quan trọng. |
 
 **Câu hỏi AI phản biện v0 (nếu có):**
-- Field nào mơ hồ:
-- Tôi sửa gì:
+- **Field nào mơ hồ:** Khái niệm tin nhắn quan trọng ban đầu còn mơ hồ vì mức độ quan trọng phụ thuộc vào người gửi, nội dung, deadline, mức độ khẩn cấp và mức độ liên quan đến từng sinh viên. Ngoài ra, chưa rõ vấn đề có thực sự cần AI hay notification/rule đơn giản đã đủ.
+- **Tôi sửa gì:** Nhóm định nghĩa rõ tin nhắn quan trọng dựa trên các tín hiệu như sender, action, deadline, urgency, mention và relevance. Nhóm cũng tách vai trò của hệ thống thành AI để hiểu nội dung/ngữ cảnh, Rule để tính Priority Score, Agent để tổng hợp/cảnh báo và giữ bước review/xác nhận của sinh viên làm human boundary.
+
 
 ---
 
