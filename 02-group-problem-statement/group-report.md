@@ -6,16 +6,13 @@
 
 | STT | Họ và tên | Mã học viên | Vai trò trong nhóm (VD: facilitator, workflow, research, writer) |
 |-----|-----------|-------------|---------------------------------------------------------------|
-| 1   | Nguyễn Thành Duy | 2A202602804 | Member / Pitcher                                              |
-| 2   | Nguyễn Minh Lương | Chưa bổ sung | Member / Pitcher                                              |
-| 3   | Vũ Việt Hoàng     | Chưa bổ sung | Member / Pitcher                                              |
-| 4   | Phạm Quang Đạt    | 2A202602704  | Member / Pitcher                                              |
-| 5   | Trương Việt Anh   | Chưa bổ sung | Member / Pitcher                                              |
-| 6   | Nguyễn Vũ Anh     | Chưa bổ sung | Member / Pitcher                                              |
+| 1   | Nguyễn Thành Duy | 2A202602804 | Leader / Pitcher                                              |
+| 2   | Nguyễn Minh Lương | 2A202602618 | Member / Pitcher                                              |
+| 3   | Vũ Việt Hoàng     | 2A202602398 | Member / Research                                             |
+| 4   | Phạm Quang Đạt    | 2A202602704  | Member / Research                                             |
+| 5   | Trương Việt Anh   | 2A202602444 | Member / Workflow                                             |
+| 6   | Nguyễn Vũ Anh     | 2A202602502 | Member / Writer                                               |
 
-> Lưu ý hành chính: worksheet gợi ý nhóm 3-4 người, trong khi danh sách làm việc hiện
-> có 6 người. Nhóm cần xác nhận quy mô này với giảng viên trước khi nộp và bổ sung các
-> mã học viên còn thiếu.
 
 **Candidate problem nhóm chọn (1 câu):**
 Sinh viên sử dụng Discord cho việc học phải dành khoảng 20-30 phút mỗi ngày để đọc và
@@ -50,7 +47,7 @@ nguy cơ bỏ sót thông tin cần hành động.
 | 18 | Nguyễn Vũ Anh | Theo dõi deadline và task từ nhiều kênh khác nhau (LMS, email, Discord, Google Calendar) | Sinh viên / nhóm học tập | Phải mở từng nguồn → kiểm tra thông báo → tìm deadline → ghi lại → sắp xếp ưu tiên | Chưa xác minh thực tế mức 15–20 phút/ngày; API của các trường đại học (LMS) thường đóng kín, khó tích hợp tự động |
 
 
-### 3.2. Gom trùng / cluster (gom 9-12 ý thành 3-4 cụm)
+### 3.2. Gom trùng / cluster (gom 18 ý thành 3-4 cụm)
 
 | Cluster | Candidates included | Pattern chung | Ghi chú |
 |---|---|---|---|
@@ -384,7 +381,7 @@ Không ghi vào lịch thật trong vòng test đầu tiên.
 Ba nhóm số đo chính:
 1. Recall của message cần hành động và số false negative.
 2. Độ chính xác của task/deadline được trích xuất.
-3. Thời gian review cùng số false positive/100 message.
+3. Thời gian review cùng số false positive/người.
 ```
 
 **Nếu Not Yet — cần validate gì trước:**
