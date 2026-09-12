@@ -20,21 +20,21 @@ Ghi việc cụ thể + kết quả cụ thể. Không ghi chung chung kiểu "t
 
 | Hoạt động | Tôi đã làm gì? (việc cụ thể) | Kết quả / ảnh hưởng tới nhóm |
 |---|---|---|
-| Scan cá nhân | Tìm và viết 5 bài toán vận hành tại Xanh SM (bỏ quên đồ, phân tích hủy cuốc, tổng hợp phản hồi lỗi app, lịch VinBus, trụ sạc VinFast); hoàn thiện 3 Problem Cards chi tiết. | Đưa 3 bài toán nghiệp vụ doanh nghiệp thực tế vào pool chung (#7, #8, #9) để nhóm so sánh với các bài toán học tập/sinh viên. |
-| Pitch Problem Card | Pitch bài #8 (Phân tích nguyên nhân tài xế hủy cuốc qua CSV và phản hồi) và #7 (Đối soát khiếu nại khách bỏ quên đồ trên taxi). | Giúp nhóm thảo luận về sự khác biệt giữa bài toán xử lý dữ liệu doanh nghiệp và bài toán text tự do hàng ngày. |
-| Challenge bài của bạn khác | Challenge bài #18 của Vũ Anh về việc kết nối cả LMS lẫn email và Discord: chỉ ra LMS các trường ĐH có API đóng kín, sinh viên không có quyền truy cập bot/token; rủi ro privacy rất lớn. | Nhóm chấp nhận thu hẹp scope bài #18: bỏ LMS và email, chỉ tập trung vào các channel học tập trên Discord. |
-| Gom trùng / cluster | Đề xuất gom 18 ý thành 4 cụm (A: Tổng hợp báo cáo, B: Tìm kiếm tri thức, C: Điều phối giao tiếp, D: Tối ưu tài nguyên/thực địa) và xếp các bài toán của mình vào cụm D để loại bớt. | Nhóm có cấu trúc phân loại rõ ràng, nhanh chóng loại được cụm D (quá phụ thuộc phần cứng/API bên ngoài) để tập trung vào cụm A và B. |
-| Chọn candidate problem | Sau khi nhận phản biện về dữ liệu nội bộ Xanh SM khó mang ra demo, tôi đồng ý bỏ phiếu cho bài #18 của Vũ Anh với điều kiện giới hạn scope. | Đạt được sự đồng thuận cao (34/35 điểm), nhóm không bị chia rẽ và chọn được bài toán sát sườn sinh viên nhất. |
-| Validation / research | Trực tiếp phỏng vấn 1 bạn sinh viên năm 3 về thói quen check tin nhắn Discord dự án và tổng hợp 8 kết quả micro-survey; tham khảo cơ chế của Motion AI và Zapier Discord integration. | Đưa vào nhóm bằng chứng thực tế: pain không phải là nhiều thông báo rác mà là task bị giao ẩn ý trong câu chat; bổ sung benchmark các tool hiện có. |
-| Workflow nhóm | Thiết kế chi tiết 7 bước của Future Workflow, bổ sung bước "Rule kiểm tra dữ liệu và tính priority score" cùng cơ chế Fallback thủ công. | Làm rõ ranh giới: AI chỉ gợi ý nháp (draft), bắt buộc con người ấn Confirm trước khi gọi Todo/Calendar API. |
-| Problem Statement | Viết và gọt giũa 8 field của PS v0 và v1, đặc biệt là Success Metric (Recall ≥90%, sai số deadline ≤5%, false positive ≤2/ngày/người). | Đưa ra các chỉ số định lượng cụ thể, có thể đo lường và kiểm chứng được ngay trên tập test 100 message gán nhãn. |
-| Rule / Workflow / Agent | Phân tích so sánh 3 cấp độ giải pháp; phản biện đề xuất làm "Autonomous Agent tự chat nhắc deadline" của bạn khác vì rủi ro spam và ảo giác. | Định hướng nhóm chọn cấp độ **Workflow** (kết hợp Rule lọc + AI NLP + Human Confirm), tiết kiệm chi phí và khả thi nhất. |
-| Decision | Cùng nhóm trả lời 6 câu hỏi checklist đánh giá, bảo vệ quan điểm "Go cho pilot bán thủ công, Not Yet cho production bot". | Nhóm có lộ trình pilot thực tế (test trên 100 message ẩn danh trong 7 ngày) và tiêu chí exit/rollback rõ ràng khi AI sai. |
+| Scan cá nhân | Chuẩn bị 5 bài toán vận hành Xanh SM và 3 Problem Cards nộp vào danh sách nhóm. | Đóng góp 3 bài toán (#7, #8, #9) vào pool 18 candidate chung. |
+| Pitch Problem Card | Pitch 2 bài toán về xử lý khiếu nại taxi (#7) và phân tích hủy cuốc (#8). | Giúp nhóm có thêm góc nhìn thực tế về bài toán dữ liệu doanh nghiệp. |
+| Challenge bài của bạn khác | Phản biện bài #18 của Vũ Anh về việc API LMS đóng kín và quyền riêng tư email. | Nhóm đồng ý thu hẹp phạm vi, chỉ tập trung vào channel Discord học tập. |
+| Gom trùng / cluster | Điều phối nhóm gom 18 bài vào 4 cụm; xếp bài taxi/trạm sạc vào cụm D để loại. | Nhóm thống nhất nhanh cấu trúc 4 cụm và loại bớt các bài không khả thi. |
+| Chọn candidate problem | Cùng nhóm chấm điểm ma trận và thống nhất chọn bài #18 của Vũ Anh. | Nhóm đạt đồng thuận cao (34/35 điểm), tập trung vào bài toán sát sườn. |
+| Validation / research | Hoàng và Đạt phụ trách chính; tôi hỗ trợ phỏng vấn 1 bạn và chạy survey 8 sinh viên. | Bổ sung dữ liệu thực tế về pain point đọc tin nhắn cho nhóm. |
+| Workflow nhóm | Việt Anh dựng workflow; tôi góp ý chèn bước Human Confirm và cơ chế Fallback. | Đảm bảo an toàn, không để AI tự ý ghi đè vào lịch học của sinh viên. |
+| Problem Statement | Vũ Anh chấp bút; tôi rà soát, đồng bộ và chốt các chỉ số Success Metric. | Thống nhất bộ số đo cụ thể (recall ≥90%, FP ≤2/ngày/người) trong PS v1. |
+| Rule / Workflow / Agent | Cùng nhóm thảo luận, phản biện đề xuất làm Agent tự động để chốt mức Workflow. | Giúp nhóm chọn đúng mức giải pháp vừa sức, tránh ảo giác và spam. |
+| Decision | Điều phối nhóm trả lời 6 câu hỏi checklist để chốt quyết định cuối cùng. | Nhóm thống nhất Go cho pilot nhỏ 100 tin nhắn và Not Yet cho production. |
 
 **Dấu tay rõ nhất của tôi trong artifact cuối (1-2 câu):**
 
 ```text
-Tôi là người kiên quyết thu hẹp phạm vi từ "theo dõi deadline đa kênh (LMS, Discord, Email)" về chỉ riêng "Discord channel học tập", đồng thời thiết lập chốt chặn bắt buộc (Human-in-the-loop) để sinh viên bấm Confirm trước khi ghi vào lịch, ngăn chặn hoàn toàn rủi ro AI làm xáo trộn lịch học thật.
+Tôi điều phối nhóm thu hẹp bài toán về riêng Discord học tập, đồng thời kiên quyết giữ chốt chặn sinh viên phải ấn Confirm trước khi ghi vào lịch thật.
 ```
 
 ---
