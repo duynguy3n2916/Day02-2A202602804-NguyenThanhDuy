@@ -24,17 +24,15 @@ Ghi việc cụ thể + kết quả cụ thể. Không ghi chung chung kiểu "t
 | Pitch Problem Card | Pitch 2 bài toán về xử lý khiếu nại taxi (#7) và phân tích hủy cuốc (#8). | Giúp nhóm có thêm góc nhìn thực tế về bài toán dữ liệu doanh nghiệp. |
 | Challenge bài của bạn khác | Phản biện bài #18 của Vũ Anh về việc API LMS đóng kín và quyền riêng tư email. | Nhóm đồng ý thu hẹp phạm vi, chỉ tập trung vào channel Discord học tập. |
 | Gom trùng / cluster | Điều phối nhóm gom 18 bài vào 4 cụm; xếp bài taxi/trạm sạc vào cụm D để loại. | Nhóm thống nhất nhanh cấu trúc 4 cụm và loại bớt các bài không khả thi. |
-| Chọn candidate problem | Cùng nhóm chấm điểm ma trận và thống nhất chọn bài #18 của Vũ Anh. | Nhóm đạt đồng thuận cao (34/35 điểm), tập trung vào bài toán sát sườn. |
-| Validation / research | Hoàng và Đạt phụ trách chính; tôi hỗ trợ phỏng vấn 1 bạn và chạy survey 8 sinh viên. | Bổ sung dữ liệu thực tế về pain point đọc tin nhắn cho nhóm. |
-| Workflow nhóm | Việt Anh dựng workflow; tôi góp ý chèn bước Human Confirm và cơ chế Fallback. | Đảm bảo an toàn, không để AI tự ý ghi đè vào lịch học của sinh viên. |
-| Problem Statement | Vũ Anh chấp bút; tôi rà soát, đồng bộ và chốt các chỉ số Success Metric. | Thống nhất bộ số đo cụ thể (recall ≥90%, FP ≤2/ngày/người) trong PS v1. |
+| Chọn candidate problem | Cùng nhóm chấm điểm ma trận và thống nhất chọn bài #18 của Vũ Anh. | Nhóm đạt đồng thuận cao |
+| Problem Statement | Việt Anh lên ý tưởng và làm chính, tôi rà soát, đồng bộ và chốt các chỉ số Success Metric. | Thống nhất bộ số đo cụ thể trong PS v1. |
 | Rule / Workflow / Agent | Cùng nhóm thảo luận, phản biện đề xuất làm Agent tự động để chốt mức Workflow. | Giúp nhóm chọn đúng mức giải pháp vừa sức, tránh ảo giác và spam. |
-| Decision | Điều phối nhóm trả lời 6 câu hỏi checklist để chốt quyết định cuối cùng. | Nhóm thống nhất Go cho pilot nhỏ 100 tin nhắn và Not Yet cho production. |
+| Decision | Điều phối nhóm trả lời 6 câu hỏi checklist để chốt quyết định cuối cùng. | Thống nhất được kết quả cuối tuần |
 
 **Dấu tay rõ nhất của tôi trong artifact cuối (1-2 câu):**
 
 ```text
-Tôi điều phối nhóm thu hẹp bài toán về riêng Discord học tập, đồng thời kiên quyết giữ chốt chặn sinh viên phải ấn Confirm trước khi ghi vào lịch thật.
+Tôi điều phối nhóm xác định rõ bài toán và các vấn đề liên quan, tổ chức chia công việc nhóm và tổng hợp lại các ý kiến chung.
 ```
 
 ---
@@ -68,7 +66,7 @@ Chọn 3-4 câu trong 6 câu dưới để viết thành đoạn 8-12 câu (khô
 **Reflection:**
 
 ```text
-Trong suốt buổi thảo luận, nhóm tôi không ít lần bị cuốn vào bẫy 'solution-first' khi một số bạn hào hứng đề xuất dựng hẳn một multi-agent system có khả năng tự trò chuyện trong Discord, tự phân công công việc và tự đồng bộ lịch. Lúc đó tôi phải kéo nhóm lại bằng câu hỏi: 'Nếu bot hiểu nhầm câu đùa thành deadline gấp rồi spam thông báo cho cả lớp lúc nửa đêm thì ai chịu trách nhiệm?'. Bản thân tôi ban đầu cũng rất tâm đắc với bài toán phân tích tỷ lệ tài xế hủy cuốc tại Xanh SM vì đã có sẵn góc nhìn nghiệp vụ thực tế. Tuy nhiên, khi bị các bạn chất vấn về việc không thể chia sẻ dữ liệu log nội bộ và bài toán quá xa vời với thời lượng lab 4 tiếng, tôi nhận ra mình đang quá bảo thủ với bài toán của riêng mình nên đã chủ động đổi phiếu sang bài toán Discord của bạn Vũ Anh. Dấu ấn rõ nét nhất của tôi trong báo cáo cuối cùng chính là việc kiên quyết siết chặt Boundary và thiết kế cơ chế 'Human Confirm' ở bước cuối, không để AI can thiệp trực tiếp vào lịch học của sinh viên. Qua bài lab này, tôi thấy phần khó nhất khi viết Problem Statement chính là xác định Metric chứ không phải Boundary. Để tìm ra một bộ chỉ số vừa phản ánh đúng chất lượng trích xuất (recall ≥90%), vừa lượng hóa được sự khó chịu của người dùng qua số lượng cảnh báo sai (false positive ≤2/ngày/người) đòi hỏi nhóm phải phỏng vấn và chạy thử nghiệm trên dữ liệu thật. Nếu được làm lại từ đầu, tôi sẽ thúc đẩy nhóm thu thập sẵn một tập dữ liệu chat thực tế từ tuần trước thay vì chỉ dựa vào ước lượng thời gian 20-30 phút/ngày, giúp nhóm có một baseline vững chắc hơn để tự tin ra quyết định Go hay Not Yet.
+Khi nghe top 3 problems của các bạn thì tôi đã tiếp thu được khá nhiều ý tưởng mới và các góc nhìn khác nhau khi tiếp cận với nhiều vấn đề khác nhau. Ban đầu tôi định bảo vệ bài toán phân tích hủy cuốc taxi Xanh SM của mình. Tuy nhiên, sau khi bị nhóm phản biện về việc dữ liệu nội bộ khó tiếp cận, tôi đã đổi ý sang ủng hộ bài toán Discord của bạn Vũ Anh. Trong lúc thảo luận giải pháp, nhóm cũng từng muốn làm Agent tự động lên lịch cho ngầu. Tôi đã cản lại vì nhận thấy bot dễ hiểu nhầm tin nhắn và làm xáo trộn lịch thật của sinh viên. Dấu tay rõ nhất của tôi là giữ chốt chặn sinh viên phải bấm Confirm trước khi tạo task và bỏ bớt phần LMS/email. Phần khó nhất với tôi là xác định metric đo lường, đặc biệt là giới hạn dưới 2 cảnh báo sai mỗi ngày. Nếu làm lại, tôi sẽ cùng nhóm thu thập dữ liệu tin nhắn thực tế sớm hơn để có baseline vững chắc.
 ```
 
 ---
