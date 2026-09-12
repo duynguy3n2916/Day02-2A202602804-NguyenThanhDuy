@@ -14,8 +14,7 @@
 | 6   | Nguyễn Vũ Anh     |             | Member / Pitcher                                              |
 
 **Candidate problem nhóm chọn (1 câu):**
-
-
+Hệ thống tự động theo dõi, trích xuất và tổng hợp deadline, bài tập từ nhiều kênh rời rạc (LMS, Email trường, tin nhắn Discord) vào một lịch học tập tập trung cho sinh viên.
 ---
 
 ## Phase 3 — Group Convergence: từ 9-12 candidates về 1
@@ -48,49 +47,58 @@
 
 | Cluster | Candidates included | Pattern chung | Ghi chú |
 |---|---|---|---|
-| A | | | |
-| B | | | |
-| C | | | |
-| D (nếu có) | | | |
+| A: Tổng hợp, phân loại & báo cáo dữ liệu rời rạc | #6 (Chi tiêu), #8 (Hủy cuốc CSV), #11 (Dữ liệu đánh giá), #12 (Lỗi Python), #18 (Deadline đa kênh) | Gom dữ liệu từ nhiều nguồn rải rác hoặc đọc/phân loại text tự do không cấu trúc để lập báo cáo / bảng tổng hợp | Thế mạnh cốt lõi của AI NLP & Rule automation; workflow tuyến tính rõ ràng, dễ đo lường thời gian tiết kiệm, khả thi cao nhất trong lab |
+| B: Tìm kiếm, truy xuất thông tin & gợi ý tri thức | #2 (Tài liệu học yếu), #14 (Tài liệu AI), #15 (Thông báo Discord), #16 (Tin nhắn chat cũ) | Người dùng bị ngợp thông tin (tin nhắn, tài liệu, thông báo); không nhớ đúng từ khóa để tra cứu đúng nội dung cần tìm | Dễ bị trôi sang bài toán Chatbot/RAG quá rộng; chất lượng câu trả lời khó đo lường chuẩn xác; vướng quyền riêng tư dữ liệu chat |
+| C: Điều phối giao tiếp, phản hồi & chuyển giao thông tin (Handoff) | #1 (Phản hồi lỗi SV), #3 (Order món bếp), #7 (Tìm đồ quên taxi), #10 (Đổi lịch đa hệ thống) | Chuyển giao thông tin qua lại giữa nhiều bên (GV - SV, phục vụ - bếp, khách - tài xế, CTV - phụ huynh); dễ bị trễ hoặc tam sao thất bản | Nhiều case giải quyết tốt bằng Form/Template/Rule mà không cần AI; các case còn lại phụ thuộc lớn vào tính chủ động của con người |
+| D: Tối ưu tra cứu tài nguyên thực tế & dịch vụ bên thứ ba | #4 (Thủ tục hành chính), #5 (Tìm bãi xe), #9 (Trụ sạc xe điện ảo), #13 (Debug code), #17 (So sánh giá TMĐT) | Vấn đề gắn chặt với hạ tầng thực địa (bãi xe, trụ sạc, cơ quan công quyền) hoặc hệ thống bên thứ ba đóng kín (sàn TMĐT, compiler) | Phụ thuộc vào phần cứng/camera hoặc API đóng mà nhóm không có quyền truy cập; rủi ro kỹ thuật cao, không khả thi trong lab 4 tiếng |
+
 
 ### 3.3. Shortlist (giữ 2-3 bài trả lời được 7 câu hỏi worksheet)
 
 | Candidate | Vì sao vào shortlist (2-3 ý) | Rủi ro / điều chưa rõ |
 |---|---|---|
-| | | |
-| | | |
-| | | |
+| **#18: Theo dõi deadline & task học tập từ nhiều kênh (LMS, Email, Discord)** (Nguyễn Vũ Anh) | 1. Cả 6 thành viên trong nhóm đều là sinh viên và gặp nỗi đau này hàng ngày.<br>2. Dữ liệu tin nhắn Discord/email và lịch Google có sẵn ngay trong buổi lab để kiểm chứng.<br>3. Workflow rõ ràng: quét tin nhắn text không cấu trúc → AI trích xuất thời hạn → đẩy vào lịch. | Khả năng truy cập API của hệ thống LMS trường đại học có thể bị hạn chế, cần phương án trích xuất qua email notification hoặc extension. |
+| **#11: Gom dữ liệu đánh giá học viên trong 8 giờ** (Phạm Quang Đạt) | 1. Workflow tuyến tính rất rõ ràng (lấy attendance, bài nộp, ghép vào Google Sheets).<br>2. Đo lường được ngay: 5-7 phút/học sinh x 20 bạn = 100-140 phút/buổi.<br>3. Điểm nghẽn ở khâu đọc dữ liệu nhiều nguồn và viết nhận xét sơ bộ. | Chỉ có 1 thành viên trong nhóm (Đạt) từng làm trợ giảng nên các bạn khác khó đồng cảm sâu với nghiệp vụ nội bộ của trung tâm. |
+| **#1: Phản hồi lỗi cơ bản lặp lại trong bài nộp sinh viên** (Nguyễn Minh Lương) | 1. Nỗi đau thực tế của giảng viên và trợ giảng vào mỗi kỳ nộp bài tập lớn.<br>2. Rất phù hợp với AI đọc code/text và đưa ra gợi ý nhận xét mẫu.<br>3. Đo lường được số lượng phản hồi gửi đi trong mỗi đợt chấm. | Tiêu chí chấm của mỗi môn/giảng viên rất khác nhau; rủi ro AI nhận xét sai làm sinh viên khiếu nại điểm; khó xin mẫu bài nộp thật của lớp khác để test. |
 
 ### 3.4. Score để đồng thuận (chấm 1-5, ép nói rõ vì sao cho 5 / cho 3)
 
 | Candidate | Actor rõ | Workflow rõ | Pain có evidence | Impact đo được | Làm trong lab | So sánh R/W/A được | Nhóm hiểu domain | Tổng |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| | | | | | | | | |
-| | | | | | | | | |
-| | | | | | | | | |
+| **#18: Theo dõi deadline đa kênh (LMS, Email, Discord)** | 5 | 5 | 5 | 4 | 5 | 5 | 5 | **34** |
+| **#11: Gom dữ liệu đánh giá học viên trong 8 giờ** | 5 | 4 | 4 | 4 | 4 | 4 | 3 | **28** |
+| **#1: Phản hồi lỗi bài nộp cơ bản của sinh viên** | 4 | 4 | 3 | 4 | 3 | 4 | 3 | **25** |
 
 **Candidate nhóm chọn (1 bài duy nhất):**
 
 ```text
-
+Hệ thống tự động theo dõi, trích xuất và tổng hợp deadline, bài tập từ nhiều kênh rời rạc (LMS, Email trường, tin nhắn Discord) vào một lịch học tập tập trung cho sinh viên.
 ```
 
 **Vì sao chọn (4-5 câu):**
 
 ```text
-
+1. Đây là bài toán có nỗi đau thật và cấp thiết nhất với nhóm: cả 6 thành viên đều từng bị muộn hoặc sót deadline do thông tin bị rải rác trên 3-4 nền tảng khác nhau.
+2. Dữ liệu đầu vào (thông báo LMS, email nhà trường, tin nhắn trong các kênh Discord) có sẵn 100% ngay trên laptop của nhóm để thực hiện kiểm chứng và chạy thử nghiệm mà không cần xin quyền phức tạp.
+3. Workflow xử lý rất tuyến tính và khả thi: lấy tin nhắn/email mới -> AI đọc hiểu ngữ cảnh tự nhiên để bóc tách (môn học, tên bài tập, hạn nộp chính xác) -> đẩy sự kiện vào Google Calendar.
+4. Bài toán phân định ranh giới giữa Rule (đồng bộ lịch, webhook), Workflow (AI trích xuất ngày giờ từ text tự do) và Agent (tự sắp xếp thứ tự ưu tiên) rất mạch lạc, đúng trọng tâm yêu cầu môn học.
+5. Impact đo lường được ngay bằng số phút kiểm tra app hàng ngày (giảm từ 20 phút xuống < 2 phút) và tỷ lệ nộp bài muộn giảm về 0%.
 ```
 
 **Vì sao KHÔNG chọn các candidate còn lại (mỗi bài 2-3 câu):**
 
 ```text
-
+- #11 (Gom dữ liệu đánh giá 8 giờ): Quy trình gom dữ liệu điểm danh và bài nộp khá rõ, nhưng bài toán này mang tính đặc thù nội bộ của một trung tâm dạy học cụ thể. Ngoại trừ bạn Đạt, các thành viên khác không tiếp cận được hệ thống quản lý học viên để lấy log thật nên không thể kiểm chứng sâu trong buổi lab.
+- #1 (Phản hồi lỗi cơ bản bài nộp): Mặc dù AI rất mạnh về phân tích lỗi code/bài tập, nhưng ranh giới đúng/sai trong việc chấm bài rất nhạy cảm. Nếu AI đưa ra phản hồi sai, sinh viên sẽ khiếu nại giảng viên, tạo ra rủi ro học thuật lớn; ngoài ra nhóm không xin được kho bài nộp thật của các lớp khác để thử nghiệm.
+- Các bài thuộc nhóm Xanh SM / VinFast (#7, #8, #9 của Duy): Nhóm đã tranh luận rất kỹ về bài tìm đồ quên taxi Xanh SM vì workflow rất hay, nhưng nhận thấy việc tích hợp vào hệ thống tổng đài và app tài xế của một tập đoàn lớn là hoàn toàn bất khả thi đối với sinh viên trong phạm vi lab 4 tiếng.
 ```
 
 **Disagreement (nếu có — ai lo gì, chốt ra sao):**
 
 ```text
-
+Lúc đầu nhóm có sự phân vân lớn giữa bài #18 (Deadline đa kênh của Vũ Anh) và bài #11 (Gom dữ liệu đánh giá của Đạt). Bạn Đạt cho rằng bài #11 có thời gian bottleneck rất nặng (mất 2 tiếng mỗi tối) và có deadline 8 giờ rõ ràng, trong khi bài #18 có thể dùng Google Calendar thủ công cũng được. 
+Tuy nhiên, bạn Việt Anh và Duy đã challenge lại: "Nếu sinh viên tự nhớ để nhập tay vào Google Calendar thì đã không bao giờ có chuyện quên deadline. Vấn đề là thông báo của thầy cô nằm rải rác trong các thread chat Discord và email dài dòng, sinh viên không biết có deadline mới để mà nhập vào lịch". 
+Sau khi bạn Vũ Anh mở ngay điện thoại cho nhóm xem 3 kênh Discord lớp với hàng chục thông báo chưa đọc, nhóm nhận thấy đây là "pain point" chung của 100% sinh viên. Bạn Đạt đồng ý rút bài #11 và nhóm thống nhất dồn lực 100% cho bài toán theo dõi deadline đa kênh.
 ```
 
 ---
